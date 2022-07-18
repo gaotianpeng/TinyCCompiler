@@ -84,11 +84,12 @@ add_subdirectory("third_party/googletest")
 add_executable(tinycompiler_tests "")
 target_include_directories(tinycompiler_tests
   PUBLIC
-  ${PROJECT_SOURCE_DIR}/parser/)
+  ${PROJECT_SOURCE_DIR}/parser/
+  ${PROJECT_SOURCE_DIR}/common/)
 
 target_sources(tinycompiler_tests
   PUBLIC
-  "test.cc"
+  "ut_scanner.cc"
   "parser/scanner.h"
   "parser/scanner.cc"
 )                    

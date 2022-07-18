@@ -6,15 +6,21 @@
         scanner读取源文件, 按序返回文件内的字符，直到文件结束
 */
 #include <stdio.h>
-
+#include <memory>
 namespace Lexer {
 class Scanner {
 public:
-    static char Scan(FILE* fp);
-protected:
+    Scanner();
+    char Scan(FILE* fp);
+
+    /*
+        for test
+    */
+    char ScanTest(FILE* fp);
 
 private:
-
+    class Impl;
+    std::shared_ptr<Impl> impl_;
 }; // class Scanner
 } // namesapce Lexer
 
