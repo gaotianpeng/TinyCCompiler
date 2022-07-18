@@ -34,8 +34,7 @@ public:
     explicit Token(Tag t);
     virtual std::string ToString();
     virtual ~Token();
-
-private:
+    
     Tag tag;
 };
 
@@ -89,7 +88,7 @@ public:
 
 public:
 	Keywords();//关键字列表初始化
-	Tag getTag(std::string name);//测试是否是关键字
+	Tag GetTag(std::string name);//测试是否是关键字
 };
 
 } // namespace Parser

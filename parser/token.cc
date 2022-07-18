@@ -91,7 +91,7 @@ Keywords::Keywords() {
     keywords["return"]   =  Tag::KW_RETURN;
 }
 
-Tag Keywords::getTag(std::string name) {
+Tag Keywords::GetTag(std::string name) {
     return keywords.find(name) != keywords.end() ? keywords[name] : Tag::ID;
 }
 
