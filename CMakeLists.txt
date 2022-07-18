@@ -94,5 +94,7 @@ target_sources(tinycompiler_tests
   "parser/token.h"
   "parser/token.cc"
   "ut_token.cc"
+  "parser/lexer.h"
+  "parser/lexer.cc"
 )                    
 target_link_libraries(tinycompiler_tests gmock gtest gtest_main)

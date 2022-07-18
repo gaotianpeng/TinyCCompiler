@@ -11,13 +11,13 @@ namespace Parser {
 
 class Scanner {
 public:
-    Scanner();
-    char Scan(FILE* fp);
+    explicit Scanner(FILE* fp);
+    char Scan();
 
     /*
         for test
     */
-    char ScanTest(FILE* fp);
+    char ScanTest();
 
 private:
     class Impl;
