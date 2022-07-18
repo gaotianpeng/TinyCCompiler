@@ -8,6 +8,7 @@
 #include <stdio.h>
 #include <memory>
 namespace Lexer {
+
 class Scanner {
 public:
     Scanner();

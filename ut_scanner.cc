@@ -5,7 +5,7 @@
 
 using Scanner = Lexer::Scanner;
 
-TEST(FORTEST, For_Test1) {
+TEST(ScannerTest, ScanTest1) {
     Scanner scanner;
     EXPECT_EQ(FILE_ERROR, scanner.ScanTest(NULL));
     FILE* fp = fopen("test.cc", "r");
@@ -19,7 +19,7 @@ TEST(FORTEST, For_Test1) {
     fclose(fp);
 }
 
-TEST(FORTEST, For_Test2) {
+TEST(ScannerTest, ScanTest2) {
     Scanner scanner;
     EXPECT_EQ(FILE_ERROR, scanner.Scan(NULL));
     FILE* fp = fopen("test.cc", "r");
@@ -33,7 +33,7 @@ TEST(FORTEST, For_Test2) {
     fclose(fp);
 }
 
-TEST(FORTEST, For_Test3) {
+TEST(ScannerTest, ScanTest3) {
     Scanner scanner;
     FILE* fp1 = fopen("test.cc", "r");
     FILE* fp2 = fopen("test.cc", "r");

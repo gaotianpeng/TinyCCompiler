@@ -73,7 +73,6 @@ PUBLIC
 find_package(Threads REQUIRED)
 target_link_libraries(tinycompiler Threads::Threads)
 
-
 enable_testing()
 set(gtest_force_shared_crt ON CACHE BOOL "" FORCE)
 set(install_gtest OFF)
@@ -92,5 +91,8 @@ target_sources(tinycompiler_tests
   "ut_scanner.cc"
   "parser/scanner.h"
   "parser/scanner.cc"
+  "parser/token.h"
+  "parser/token.cc"
+  "ut_token.cc"
 )                    
 target_link_libraries(tinycompiler_tests gmock gtest gtest_main)
