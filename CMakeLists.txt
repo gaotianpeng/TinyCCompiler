@@ -13,9 +13,9 @@ if(NOT CMAKE_CXX_STANDARD)
   set(CMAKE_CXX_EXTENSIONS OFF)
 endif(NOT CMAKE_CXX_STANDARD)
 
-option(tinycompiler_BUILD_TESTS "Build tinycompiler's unit tests" ON)
-option(tinycompiler_BUILD_BENCHMARKS "Build tinycompiler's benchmarks" ON)
-option(tinycompiler_INSTALL "Install tinycompiler's header and library" ON)
+option(TINYCOMPILER_BUILD_TESTS "Build tinycompiler's unit tests" ON)
+option(TINYCOMPILER_BUILD_BENCHMARKS "Build tinycompiler's benchmarks" ON)
+option(TINYCOMPILER_INSTALL "Install tinycompiler's header and library" ON)
 
 
 if(CMAKE_CXX_COMPILER_ID STREQUAL "MSVC")
@@ -55,12 +55,12 @@ if(BUILD_SHARED_LIBS)
 endif(BUILD_SHARED_LIBS)
 
 # GoogleTest triggers a missing field initializers warning.
-if(tinycompiler_HAVE_NO_MISSING_FIELD_INITIALIZERS)
+if(TINYCOMPILER_HAVE_NO_MISSING_FIELD_INITIALIZERS)
   set_property(TARGET gtest
       APPEND PROPERTY COMPILE_OPTIONS -Wno-missing-field-initializers)
   set_property(TARGET gmock
       APPEND PROPERTY COMPILE_OPTIONS -Wno-missing-field-initializers)
-endif(tinycompiler_HAVE_NO_MISSING_FIELD_INITIALIZERS)
+endif(TINYCOMPILER_HAVE_NO_MISSING_FIELD_INITIALIZERS)
 
 include(GNUInstallDirs)
 
@@ -69,16 +69,6 @@ target_sources(tinycompiler
 PUBLIC
   "main.cc"
 )
-
-if(HAVE_CRC32C)
-  target_link_libraries(tinycompiler crc32c)
-endif(HAVE_CRC32C)
-if(HAVE_SNAPPY)
-  target_link_libraries(tinycompiler snappy)
-endif(HAVE_SNAPPY)
-if(HAVE_TCMALLOC)
-  target_link_libraries(tinycompiler tcmalloc)
-endif(HAVE_TCMALLOC)
 
 find_package(Threads REQUIRED)
 target_link_libraries(tinycompiler Threads::Threads)
