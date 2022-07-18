@@ -24,8 +24,15 @@ TEST(FORTEST, For_Test2) {
     EXPECT_EQ(FILE_ERROR, scanner.Scan(NULL));
     FILE* fp = fopen("test.cc", "r");
     ASSERT_TRUE(fp != NULL);
+    char ch;
+    while ((ch = scanner.ScanTest(fp)) != -1) {
+        printf("%c", ch);
+    }
+    printf("\n");
+    EXPECT_EQ(FILE_END, ch);
     fclose(fp);
 }
+
 TEST(FORTEST, For_Test3) {
     Scanner scanner;
     FILE* fp1 = fopen("test.cc", "r");
