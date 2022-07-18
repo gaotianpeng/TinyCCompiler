@@ -7,7 +7,7 @@
 */
 #include <stdio.h>
 #include <memory>
-namespace Lexer {
+namespace Parser {
 
 class Scanner {
 public:
@@ -23,6 +23,6 @@ private:
     class Impl;
     std::shared_ptr<Impl> impl_;
 }; // class Scanner
-} // namesapce Lexer
+} // namesapce Parser
 
 #endif // __PARSER_SCANNER_H

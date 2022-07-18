@@ -1,7 +1,7 @@
 #include "token.h"
 #include <sstream>
 
-namespace Lexer {
+namespace Parser {
 
 using namespace std;
 
@@ -95,4 +95,4 @@ Tag Keywords::getTag(std::string name) {
     return keywords.find(name) != keywords.end() ? keywords[name] : Tag::ID;
 }
 
-} // namespace Lexer
+} // namespace Parser

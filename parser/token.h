@@ -4,7 +4,7 @@
 #include <string>
 #include <unordered_map>
 
-namespace Lexer {
+namespace Parser {
 
 enum class Tag:int {
     ERR,                                // 错误，异常
@@ -92,6 +92,6 @@ public:
 	Tag getTag(std::string name);//测试是否是关键字
 };
 
-} // namespace Lexer
+} // namespace Parser
 
 #endif // _PARSER_TOKEN_H

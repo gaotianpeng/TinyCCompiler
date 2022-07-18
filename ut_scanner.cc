@@ -3,7 +3,7 @@
 #include "common.h"
 #include <stdio.h>
 
-using Scanner = Lexer::Scanner;
+using Scanner = Parser::Scanner;
 
 TEST(ScannerTest, ScanTest1) {
     Scanner scanner;

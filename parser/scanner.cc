@@ -1,7 +1,7 @@
 #include "scanner.h"
 #include "common.h"
 
-namespace Lexer {
+namespace Parser {
 
 const int BUF_LEN = 80;
 
@@ -58,4 +58,4 @@ char Scanner::ScanTest(FILE* fp) {
     return impl_->ScanTest(fp);
 }
 
-} // namespace Lexer
+} // namespace Parser
