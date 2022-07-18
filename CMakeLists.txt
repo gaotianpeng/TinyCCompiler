@@ -82,8 +82,14 @@ set(build_gmock ON)
 add_subdirectory("third_party/googletest")
 
 add_executable(tinycompiler_tests "")
+target_include_directories(tinycompiler_tests
+  PUBLIC
+  ${PROJECT_SOURCE_DIR}/parser/)
+
 target_sources(tinycompiler_tests
   PUBLIC
   "test.cc"
-)                      
+  "parser/scanner.h"
+  "parser/scanner.cc"
+)                    
 target_link_libraries(tinycompiler_tests gmock gtest gtest_main)
